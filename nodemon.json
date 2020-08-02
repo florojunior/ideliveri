@@ -2,8 +2,11 @@
     "env" : {
         "MYSQL_USER" : "root",
         "MYSQL_PASSWORD" : "cdwq8i9o",
-        "MYSQL_DATABASE" : "ecommerce",
+        "MYSQL_DATABASE" : "idelivery",
         "MYSQL_HOST" : "localhost",
-        "MYSQL_PORT": 3306
-    }
+        "MYSQL_PORT": 3306,
+
+        "JWT_KEY" : "segredo",
+        "URL_API" : "http://localhost:3000/"
+    }   
 }

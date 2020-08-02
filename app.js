@@ -1,12 +1,13 @@
 const express = require('express');
 const app = express();
-const morgan = require('morgan');
+const morgan = require('morgan'); // serve para gerar log no prompt
 const bodyParser = require('body-parser');
 
 const rotaParceiros = require('./routes/parceiros');
-const rotaPedidos = require('./routes/pedidos');
+const rotaParceiros_users = require('./routes/parceiros_users');
 
 app.use(morgan('dev'));
+app.use('/uploads', express.static('uploads'));
 app.use(bodyParser.urlencoded({ extended: false })); // Apanas dados simples
 app.use(bodyParser.json()); // sera aceitado apenas json
 
@@ -25,7 +26,7 @@ app.use((req, res, next) => {
 })
 
 app.use('/parceiros', rotaParceiros);
-app.use("/pedidos", rotaPedidos);
+app.use('/parceiros_users', rotaParceiros_users);
 
 //Quando nao encontra rota, entra aqui
 app.use((req, res, next) => {
